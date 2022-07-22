@@ -21,13 +21,13 @@ public class LinguagemController {
         new Language("JavaScript", "https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/javascript/javascript_256x256.png", 2)
     ); */
         
-    @GetMapping("/linguagens")
+    @GetMapping("/languages")
     public List<Language> GetLanguages(){
         List<Language> languages = repository.findAll();
         return languages;
     }
 
-    @PostMapping("/linguagens")
+    @PostMapping("/languages")
     public Language registerLanguage(@RequestBody Language language){
         return repository.save(language);
     }
