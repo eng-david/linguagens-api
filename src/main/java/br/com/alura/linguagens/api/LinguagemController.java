@@ -21,12 +21,14 @@ public class LinguagemController {
         new Language("JavaScript", "https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/javascript/javascript_256x256.png", 2)
     ); */
         
+    // Pega os dados diretamente do MongoDB
     @GetMapping("/languages")
     public List<Language> GetLanguages(){
         List<Language> languages = repository.findAll();
         return languages;
     }
 
+    // Verbo POST adiciona dados ao MongoDB
     @PostMapping("/languages")
     public Language registerLanguage(@RequestBody Language language){
         return repository.save(language);
