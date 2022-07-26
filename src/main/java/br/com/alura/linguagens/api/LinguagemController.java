@@ -28,6 +28,11 @@ public class LinguagemController {
         return languages;
     }
 
+    @GetMapping("/test")
+    public String test(){        
+        return "test OK";
+    }
+
     // Verbo POST adiciona dados ao MongoDB
     @PostMapping("/languages")
     public Language registerLanguage(@RequestBody Language language){
